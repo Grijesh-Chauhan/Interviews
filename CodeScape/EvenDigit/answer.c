@@ -19,7 +19,7 @@ compile:
 int main(int argc, char* argv[]) {
 
     FILE *ifp = NULL, *ofp = NULL;
-    int x = 0, y = 0, count = 1, result = -1, remainder = 0;
+    int ncases = 0, num = 0, count = 1, result = -1, remainder = 0;
         
     ifp = fopen(argv[1], "r");
     if(ifp == NULL){
@@ -32,16 +32,16 @@ int main(int argc, char* argv[]) {
         fclose(ifp);
         exit(EXIT_FAILURE);
     }
-    fscanf(ifp, "%i", &x);
-    fprintf(ofp,"%i\n", x);
+    fscanf(ifp, "%i", &ncases);
+    fprintf(ofp,"%i\n", ncases);
     
-    while(fscanf(ifp, "%i", &y) != EOF) {
+    while(fscanf(ifp, "%i", &num) != EOF) {
         result = -1;
         do {
-            remainder = y % 10;
-            y /= 10;
+            remainder = num % 10;
+            num /= 10;
             (void)(remainder % 2 || (result = remainder));
-        } while(y != 0 && (remainder % 2) != 0);
+        } while(num && remainder % 2);
         
         fprintf(ofp, "CASE#%d = %i\n", count, result);
         ++count;
