@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
         fclose(ifp);
         exit(EXIT_FAILURE);
     }
-    fscanf(ifp, "%i", &ncases);
+    fscanf(ifp, "%i\n", &ncases);
     fprintf(ofp,"%i\n", ncases);
     
     while(fscanf(ifp, "%i", &num) != EOF) {
