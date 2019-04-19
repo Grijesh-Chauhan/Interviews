@@ -12,13 +12,16 @@ interesting one and it is the all possible permutations of a given set of digits
 For example, if the digits are <1 2 3>, then six possible permutations are <123>,
 <132>, <213>, <231>, <312>, <321> and the sum of them is 1332.
 
+compile:
+    $ gcc -std=gnu99 -o3 -Wall -pedantic answer.c -o answer
+    $ ./answer q3.in
+    $ cat q.out
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define DEBUG 1
-
+#define DEBUG 0
 
 unsigned int factorial(int n) {
     unsigned int f = 1u;
