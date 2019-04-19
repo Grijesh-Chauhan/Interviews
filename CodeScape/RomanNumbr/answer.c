@@ -214,5 +214,7 @@ int main(int argc, char* argv[]){
         count++;
     }
     free(lineptr);
-    exit(EXIT_SUCCESS);
+    fclose(ifp);
+    fclose(ofp);
+    return EXIT_SUCCESS;
 }
