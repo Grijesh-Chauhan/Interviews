@@ -1,17 +1,18 @@
 """
-ConteryLink has array of number strings, with a special number that is if number
-is equals to a sum of a number and its reverse.
+ConteryLink has array of string-numbers, may contain special numbers that is if a 
+number is equals to a sum of a number and its reverse.
 
-The objective is to count number of special numbers in the array.
+The objective is to count number of special numbers present in the array.
 
 Note: when you reverse a number prefex zeros can be removed  eg. 2300 -> 23
 
-examples:
+example-1:
 
 array = [22, 121]
-
 answer: 2
-explanation: 22 is equals to 11, and 121 is sum of 29 + 92
+explanation: 22 is equal to 11 + 11, and 121 is sum of 29 + 92
+
+example-2:
 
 array = [12, 3]
 answer: 1
@@ -28,7 +29,8 @@ def count_special(array):
                 break
     return count
     
-    
-# note: my code does not pass complexity wise! and got rejected.
-# If think we can improve code `xrange(1, num)` by `xrange(1, num)`
-# for num > 18
+# note: my code did not pass complexity wise!
+# I think it can be improved by replaceing 
+#   xrange(1, num)
+# by 
+#   xrange(1, num / 2 if num > 18 else num)
