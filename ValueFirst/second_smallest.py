@@ -24,7 +24,7 @@ def second_highest(numbers):
     if first == second:
         return
     return second
-    
+
 
 if __name__ == '__main__':
     assert second_highest([0, 1, 2, 3, 4]) == 3
