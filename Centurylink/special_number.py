@@ -19,12 +19,15 @@ answer: 1
 explanation: 12 is sum of 6 + 6
 """
 
+# I think i get the trick!!
+# if a number is palindrome than that number should be special number!
+
 def count_special(array):
     count = 0
     for snum in array:
         num = int(snum)
-        for i in xrange(1, num):
-            if int(str(i).strip('0')[::-1]) + i == num:
+    for i in xrange(1, num):
+        if int(str(i).strip('0')[::-1]) + i == num:
                 count += 1
                 break
     return count
