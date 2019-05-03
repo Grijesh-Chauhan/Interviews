@@ -31,7 +31,7 @@ def count_special(array):
     return count
   
 
-# my actual submission was folowing, that is not pass complexities wise
+# my actual submission was folowing, that did not pass complexities wise :(
 # def is_special(snum):
 #     num = int(snum)
 #     for i in xrange(1, num):
