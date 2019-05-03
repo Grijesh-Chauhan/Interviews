@@ -1,6 +1,8 @@
 """
 Given an array of integers(positive or negative), print the next greater element
 of all elements in the array. If there is no greater element then print None.
+
+https://www.geeksforgeeks.org/next-greater-element/
 """
 import itertools
 import container
