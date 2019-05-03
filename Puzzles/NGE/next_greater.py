@@ -1,9 +1,19 @@
 """
 Given an array of integers(positive or negative), print the next greater element
 of all elements in the array. If there is no greater element then print None.
-
-https://www.geeksforgeeks.org/next-greater-element/
 """
+# https://www.geeksforgeeks.org/next-greater-element/
+# Hint:
+# The nested loop solution in which for each outer-loop number we find 
+# the greater number in inner loop.
+# 
+# Rather than nested loop solution the trick in below implementation -> stack sub
+# -array that appears in decreasing order and as first greater number comes pop-all
+# 
+# e.g.   2,  45, 13, 7, 4, 2, 9, 10, 65
+#            ^---stack-----^  ^
+#                             | for 9 pop-all until before 13
+#
 import itertools
 import container
 
