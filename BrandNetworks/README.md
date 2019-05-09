@@ -11,3 +11,6 @@ decimal number.
 
 In SQL, self referencing tabel of stuents-name, friend-name, salary was given. I was asked to print
 pairs of student and friend where student salary < fiend slary. It was colledge placement record.
+
+
+Note: My asnwers were on Python 3
