@@ -28,7 +28,8 @@ class Data(object):
     >>> d.input()
     My name is Grijesh Chauhan.
     what is your name?                
-    Grijesh; Brijesh Chauhan>>>
+    Grijesh; Brijesh Chauhan
+    >>>
     >>> d.validate()
     >>> d.para
     'My name is Grijesh Chauhan.'
@@ -89,7 +90,7 @@ class Question(object):
     TYPE: {<WP|WRB|WDT|JJ>}        # What How, Which, Why etcs
     ATTRIBUTE: {<NN.?|JJR|JJS>*}   # which 'color', what 'part' of body, What 'currency' is used
     VERB: {<VB.?|MD>}              # is, can, are, does etcs
-	PREP: {<IN|DT|TO>*}            # prepositions - not intresed words!
+    PREP: {<IN|DT|TO>*}            # prepositions - not intresed words!
     """
     Parser = nltk.RegexpParser(GRAMMAR)
     
