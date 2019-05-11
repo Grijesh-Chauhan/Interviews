@@ -22,6 +22,7 @@ def yieldNGEpairs(array):
     stack = container.Stack()
     
     def lessthan(element):
+        """prevent the top (> element) loss"""
         def predicate(top):
             if top < element:
                 return True
@@ -34,12 +35,12 @@ def yieldNGEpairs(array):
             stack.push(element)
             continue
                     
-        for item in itertools.takewhile(lessthan(element), stack.popall()):
-            yield item, element
+        for top in itertools.takewhile(lessthan(element), stack.popall()):
+            yield top, element
         stack.push(element)
 
-    for item in stack.popall():
-        yield item, None
+    for top in stack.popall():
+        yield top, None
 
 
 if __name__ == '__main__':
