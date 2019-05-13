@@ -22,8 +22,10 @@ Algo: create a dict to store cumulative sum (from index 0 to index i) for each
 """
 
 def zero_sum_subseqeunce(array):
-    if not array  or array[0] == 0:
+    if not array:
         return []
+    if array[0] == 0:
+        return [0]
     accumulate, total = {}, 0
     for index, number in enumerate(array):
         total += number
@@ -31,7 +33,7 @@ def zero_sum_subseqeunce(array):
             start, end = accumulate[total] + 1, index
             return array[start: end+1]
         accumulate[total] = index
-    return []        
+    return []
 
 if __name__ == '__main__':
     print (zero_sum_subseqeunce([0]))
