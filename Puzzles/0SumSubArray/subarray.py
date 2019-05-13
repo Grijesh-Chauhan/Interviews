@@ -15,6 +15,10 @@ Index:  0  1  3   4  5  6
  total:    4         |
         <---(4 + 0)->|
                      4
+                     
+Algo: create a dict to store cumulative sum (from index 0 to index i) for each
+      index. If cumulative sum is same for two index meas we have just cover
+      a zero sum sub sequence array.
 """
 
 def zero_sum_subseqeunce(array):
