@@ -31,14 +31,38 @@ def zero_sum_subseqeunce(array):
         total += number
         if total in accumulate:
             start, end = accumulate[total] + 1, index
-            return array[start: end+1]
+            return array[start: end + 1]
         accumulate[total] = index
     return []
+    
+def zero_sum_longest_subseqeunce(array):
+    if not array:
+        return []
+    start, maxlen = 0, 0
+    accumulate, total = {}, 0    
+    for index, number in enumerate(array):
+        total += number
+        if total == 0:
+            start, maxlen = 0, index
+        elif total in accumulate:
+            _start, _end = accumulate[total] + 1, index
+            if maxlen < _end - _start + 1:
+                start, maxlen = _start, _end - _start + 1
+        else:
+            accumulate[total] = index
+    return array[start: start + maxlen]
 
 if __name__ == '__main__':
-    print (zero_sum_subseqeunce([0]))
-    print (zero_sum_subseqeunce([]))
-    print (zero_sum_subseqeunce([2, 2, 2, -3, 1, 6]))
-    print (zero_sum_subseqeunce([4, 2, -3, 1, 6]))
-    print (zero_sum_subseqeunce([4, 2, 0, 1, 6]))
-    print (zero_sum_subseqeunce([-3, 2, 3, 1, 6]))
+    assert zero_sum_subseqeunce([0]) == [0]
+    assert zero_sum_subseqeunce([]) == []
+    assert zero_sum_subseqeunce([2, 2, 2, -3, 1, 6]) == [2, -3, 1]
+    assert zero_sum_subseqeunce([4, 2, -3, 1, 6]) == [2, -3, 1]
+    assert zero_sum_subseqeunce([4, 2, 0, 1, 6]) == [0]
+    assert zero_sum_subseqeunce([-3, 2, 3, 1, 6]) == []
+    assert zero_sum_longest_subseqeunce([15, -2, 2, -8, 1, 7, 10, 23]) ==\
+                                            [-2, 2, -8, 1, 7]
+    assert zero_sum_longest_subseqeunce([1, 2, 3]) == []
+    assert zero_sum_longest_subseqeunce([1, 0, 3]) == [0]
+    assert zero_sum_longest_subseqeunce([]) == []
+    assert zero_sum_longest_subseqeunce([1, 2, 0, 3, 0, 0, -1, 2, -3, 2, 0, 3, 4, 2]) ==\
+                                             [0, 0, -1, 2, -3, 2, 0]
