@@ -7,8 +7,8 @@ of all elements in the array. If there is no greater element then print None.
 # The nested loop solution in which for each outer-loop number we find 
 # the greater number in inner loop.
 # 
-# Rather than nested loop solution the trick in below implementation -> stack sub
-# -array that appears in decreasing order and as first greater number comes pop-all
+# Rather than nested loop solution the trick in below implementation -> stacks sub
+# -array that appears in decreasing order, and as first greater number comes pop-all
 # 
 # e.g.   2,  45, 13, 7, 4, 2, 9, 10, 65
 #            ^---stack-----^  ^

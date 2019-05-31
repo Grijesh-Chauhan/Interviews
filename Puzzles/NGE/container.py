@@ -10,8 +10,16 @@ class Stack(list):
         return len(self)
     
     def isempty(self):
+        """ if stack.isemplty():
+                do somethings...
+
+            or
+
+            if not stack:
+                do somethings...
+        """
         return self.size() == 0
-                
+
     def __iter__(self):
         """ iter in lifo """
         return super(Stack, self).__reversed__()
