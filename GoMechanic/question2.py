@@ -1,5 +1,4 @@
-from collections import defaultdict
-
+Limit = 10 ** 9 + 7
 CoPrimePairs = {
     0: [],
     1: [(1, 1)],
@@ -49,49 +48,28 @@ CoPrimePairs = {
        ],
 }
 
-
-
-    
-def coprimes(n):
-    """ returns lists of all coprimes for 1 to n """
-    choices = defaultdict(list)
-    for pair in CoPrimePairs[n]:
-        choices[pair[0]].append(pair[1])
-        if pair[0] != pair[1]:
-            choices[pair[1]].append(pair[0])
-    return choices
-    
-def coPrimes(n):
-    """ coPrimes(n) == coprimes(n) """
-    # iterating over tuple of tuples would be faster than dict of lists
+def co_primes(n):
+    """ returns list of co-primes for 1 to n """
     pairs = set()
     for pair in CoPrimePairs[n]:
         pairs.add(pair)
         pairs.add(pair[::-1])
-    return tuple(
-            tuple(pair[1] for pair in pairs if pair[0] == i)
-            for i in range(n+1)
-           )
-   
+    return [tuple(pair[1] for pair in pairs if pair[0] == i) for i in range(n+1)]
+           
+def ways(num, length):
+    coprimes = co_primes(num)
+    ways = [0] + [1] * num
+    for _ in range(length):
+        ways = [
+            sum(map(ways.__getitem__, coprimes[i]))
+            for i in range(num + 1)
+        ]
+    return ways[1] % Limit
+
 if __name__ == '__main__':
     A = int(input("enter A, the runway length | 1 <= A <= 10\u2079: "))
     B = int(input("enter B, the number of runways | 0 <= B <= 10: "))
     
     assert 1 <= A <= 10 ** 9, "1 <= A <= 10\u2079"
     assert 1 <= B <= 10, "0 <= B <= 10"
-    
-    Limit = 10 ** 9 + 7
-    num = B
-    length = A
-    
-    coprimes = coPrimes(num)
-    ways = [0] + [1] * num
-    for _ in range(length):
-        total = sum(ways)
-        nextways = [0] * (num + 1)
-        nextways[1] = total
-        for i in range(2, num + 1):
-            nextways[i] = sum(map(ways.__getitem__, coprimes[i]))
-        ways = nextways
-        
-    print (total % Limit)
+    print (ways(B, A))
