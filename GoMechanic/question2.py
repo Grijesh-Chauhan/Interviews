@@ -91,7 +91,7 @@ if __name__ == '__main__':
         nextways = [0] * (num + 1)
         nextways[1] = total
         for i in range(2, num + 1):
-            nextways[i] = sum(ways[coprime] for coprime in coprimes[i])
+            nextways[i] = sum(map(ways.__getitem__, coprimes[i]))
         ways = nextways
         
     print (total % Limit)
