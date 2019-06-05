@@ -48,6 +48,14 @@ CoPrimePairs = {
        ],
 }
 
+import itertools
+from fractions import gcd
+def co_prime_pairs(n):
+    # FIXME utiliz this and remove CoPrimePairs
+    for pair in itertools.product(range(1, n), range(1, n)):
+        if gcd(*pair) == 1:
+            yield pair
+
 def co_primes(n):
     """ returns list of co-primes for 1 to n """
     pairs = set()
