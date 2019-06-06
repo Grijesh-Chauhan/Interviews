@@ -1,6 +1,10 @@
+"""
+$ python3 -m lexicographic.test_sequences
+"""
+
 import unittest
 import random, itertools
-from sequences import Lexicographic
+from .sequences import Lexicographic
 
 class LexicographicTest(unittest.TestCase):
     

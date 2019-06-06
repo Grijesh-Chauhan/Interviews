@@ -58,7 +58,7 @@ class Lexicographic:
         curt, index = 1, 0
         for digit in digits:
             index += 1
-            for i in range(digit-1 if curt == 1 else digit):
+            for _ in range(digit-1 if curt == 1 else digit): # 0 has nine childs, other has 10
                 index += self.distance(curt)
                 curt += 1
             curt *= 10
