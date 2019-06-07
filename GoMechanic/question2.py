@@ -7,18 +7,15 @@ except ImportError:
 # FIXME may be use limit to fix runtime for larger runway lenght!
 Limit = 10 ** 9 + 7
 
-def co_prime_pairs(n):
+def coprime_pairs(n):
     for pair in itertools.product(range(1, n+1), range(1, n+1)):
         if gcd(*pair) == 1:
             yield pair
             
-def co_primes(n):
-    """ returns list of co-primes for 1 to n """
-    pairs = [*co_prime_pairs(n)]
-    return [tuple(pair[1] for pair in pairs if pair[0] == i) for i in range(n+1)]
-
 def ways(num, length):
-    coprimes = co_primes(num)
+    coprimes = [tuple(pair[1] for pair in [*coprime_pairs(num)] if pair[0] == i)
+                for i in range(num+1)
+               ]
     ways = [0] + [1] * num
     for _ in range(length):
         ways = [
