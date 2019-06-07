@@ -14,7 +14,7 @@ def co_prime_pairs(n):
             
 def co_primes(n):
     """ returns list of co-primes for 1 to n """
-    pairs = tuple(co_prime_pairs(n))
+    pairs = [*co_prime_pairs(n)]
     return [tuple(pair[1] for pair in pairs if pair[0] == i) for i in range(n+1)]
 
 def ways(num, length):
