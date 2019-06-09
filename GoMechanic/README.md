@@ -1,7 +1,7 @@
-![question1](./Question1.png)
-![answer1](./Answer1.png)
+![question1](./readme/Question1.png)
+![answer1](./readme/Answer1.png)
 
 
-![question2](./Question2.png)
-![answer2](./Answer2.png)
+![question2](./readme/Question2.png)
+![answer2](./readme/Answer2.png)
 
