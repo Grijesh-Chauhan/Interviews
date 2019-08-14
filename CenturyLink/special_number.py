@@ -20,7 +20,7 @@ explanation: 12 is sum of 6 + 6
 """
 
 def count_special(array):
-    fewspecials = frozenset(str(i * 2) for i in xrange(10))
+    fewspecials = frozenset(str(i * 2) for i in xrange(10)) # single digits 
     count = 0
     for snum in array:
         if snum in fewspecials:
