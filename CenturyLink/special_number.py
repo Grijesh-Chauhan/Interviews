@@ -1,5 +1,5 @@
 """
-ConteryLink has array of string-numbers, may contain special numbers that is if a 
+CenturyLink has array of string-numbers, may contain special numbers that is if a 
 number is equals to a sum of a number and its reverse.
 
 The objective is to count number of special numbers present in the array.
@@ -26,7 +26,7 @@ def count_special(array):
         if snum in fewspecials:
             count += 1
             continue
-        elif len(snum) > 1 and snum == snum[::-1]:
+        elif len(snum) > 1 and snum == snum[::-1]: # palindrome numbers are those special numbers
             count += 1
     return count
   
