@@ -18,7 +18,7 @@ def starify(print_or_return='print'):
     
 # abusing builtin name
 @starify(print_or_return='return')
-def sum(a, b):
+def sum(a, b: int) -> int:
     """
     >> sum(1, 2)
     3
