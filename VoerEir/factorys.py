@@ -1,18 +1,19 @@
 class Shape:
+
     @classmethod    
-    def factory(cls, shapename):
+    def factory(cls, shapename: "name of Shape subclass") -> "subclass instance":
         for aclass in cls.__subclasses__():
-            # although Python is case sensitive language, shape name
+            # although Python is case sensitive language, but shape names
             if aclass.__name__.lower() == shapename.lower():
                 return aclass()
         else:
             raise ValueError(f"{shapename} invalid shape name")
     
-    def __str__(self):
-        return "{}()".format(self.__class__.__name__)
+    def __repr__(self):
+        return f"{self.__class__.__name__}()"
 
 class Circle(Shape):
-    pass
-        
+    """ use `Shape.factory('Circle')` instead of `Circle()` """
+
 class Square(Shape):
-    pass
+    """ use `Shape.factory('Square')` instead of `Square()` """
