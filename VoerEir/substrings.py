@@ -6,7 +6,7 @@ def lds(string: str) -> str:
         try:
             last_seen = seens[c]
             if last_seen < curt_start:
-                raise KeyError(f"'{c}' not found in '{string[curt_start: curt_end]}'")
+                raise KeyError(f"{c!r} not found in {string[curt_start: curt_end]!r}")
             if end - start <  curt_end - curt_start:
                 start, end = curt_start, curt_end
             curt_start = last_seen + 1

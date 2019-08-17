@@ -37,7 +37,7 @@ class AssessmentTest(unittest.TestCase):
                 ("", ''),
                 ]
         for string, substring in cases:
-            self.assertEqual(lds(string), substring, f"lds('{string}') != '{substring}'")
+            self.assertEqual(lds(string), substring, f"lds({string!r}) != {substring!r}")
             
     def test_shape(self):
         for shapename, cls in [('circle', Circle),

@@ -7,7 +7,7 @@ class Shape:
             if aclass.__name__.lower() == shapename.lower():
                 return aclass()
         else:
-            raise ValueError(f"{shapename} invalid shape name")
+            raise ValueError(f"Invalid shape name, {shapename!r} ")
     
     def __repr__(self):
         return f"{self.__class__.__name__}()"
