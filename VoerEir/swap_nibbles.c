@@ -1,3 +1,8 @@
+/* Swap nibbles in 1 byte unsigned number
+   
+   gcc -std=gnu99 -Wall -Os -pedantic swap_nibbles.c -o swap_nibbles
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdint.h>
