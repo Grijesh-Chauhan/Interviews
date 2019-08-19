@@ -13,9 +13,8 @@ def lds(string: str) -> str:
         except KeyError:
             pass
         seens[c] = curt_end
-    else: 
-        # case when the longest substring is suffix of the string, here curt_end
-        # do not point to a repeating char hance included in the substring
+    else:# case when the longest substring is suffix of string, here curt_end
+         # do not point to a repeating char - hance included in the substring
         if string and end - start <  curt_end - curt_start + 1:
             start, end = curt_start, curt_end + 1
     return string[start: end]
