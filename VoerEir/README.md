@@ -3,6 +3,8 @@ Note:
 * All 4 Questions are must to attempt in Python.
 * Time Slot: 90 min
 
+<br/>
+
 1. Create a reference implementation for a Singleton Class.
 
 2. Create a reference implementation for Factory class which can generate different kind shapes based on shape name. It should be able to fetch all available shape classes and should be easily extensible for new shapes to add without requiring changes in factory.
