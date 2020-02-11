@@ -126,7 +126,7 @@ class ParsedData(Data):
         ignore_words.update(string.punctuation)
         for sent in sent_tokenize(text):
             words = word_tokenize(sent)
-            yield [ word for word in words if word not in stop_words ]
+            yield [ word for word in words if word not in ignore_words ]
         
     def tokenized_para(self, remove_stopwords=False):
         return self.itext_tokenize(self.para, remove_stopwords)
